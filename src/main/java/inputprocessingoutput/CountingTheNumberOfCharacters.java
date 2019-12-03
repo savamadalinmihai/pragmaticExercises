@@ -8,15 +8,22 @@ public class CountingTheNumberOfCharacters {
         String string = getInputFromUser();
         int count = 0;
 
-        for (int i = 0; i < string.length(); i++) {
-            if (string.charAt(i) != ' ')
-                count++;
+        if (string.isEmpty()){
+            System.out.println("Please type something!");
 
+        while (!getInputFromUser().equals("")){
+            Scanner scanner = new Scanner(System.in);
+        }
+
+            for (int i = 0; i < string.length(); i++) {
+                if (string.charAt(i) != ' ')
+                    count++;
+          }
         }
         System.out.println("The number of characters in " + string + " is: " + count);
     }
 
-    private String getInputFromUser() {
+    public String getInputFromUser() {
         System.out.println("What's your input?");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
