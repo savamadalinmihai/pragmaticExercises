@@ -7,7 +7,7 @@ public class AreaOfARectangularRoom {
     int widthInFeet = getWidthInFeet();;
     int area = lengthInFeet * widthInFeet;
     double areaInMeters = area * 0.09290304;
-    double roundedAreaInMeters = Math.round(areaInMeters * 1000.0) / 1000.0;;
+    double roundedAreaInMeters = Math.round(areaInMeters * 1000.0) / 1000.0;
 
 public void calculateArea(){
     System.out.println("You entered dimensions of " + lengthInFeet + " feet by " + widthInFeet + " feet.");
@@ -15,7 +15,6 @@ public void calculateArea(){
     System.out.println("The area in meters is " + roundedAreaInMeters);
 
 }
-
 
 
     private int getLengthInFeet(){

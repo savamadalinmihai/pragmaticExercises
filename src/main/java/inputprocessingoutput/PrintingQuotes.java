@@ -24,7 +24,6 @@ public class PrintingQuotes {
 
     }
 
-
     public static void main(String[] args) {
         PrintingQuotes printingQuotes = new PrintingQuotes();
         printingQuotes.addQuotes();
