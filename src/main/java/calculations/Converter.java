@@ -5,7 +5,8 @@ import java.util.Scanner;
 
 public class Converter {
     double ammountInEuros = getAmmountInEuros();
-    double rate = getRate();
+    double rateFromUser = getRate();
+    double rate = rateFromUser/100;
     double ammountInDollars = ammountInEuros * rate;
     double roundedAmmountInDollars = ammountInDollars/100;
 
