@@ -6,7 +6,12 @@ public class PasswordValidation {
 
     public void validate(){
         String password = getPassword();
-        if (!password.equals("abc$123")){
+        if (password.equals("ABC$123")){
+            System.out.println("Careful! The password is case sensitive!");
+            System.out.println("Please try again!");
+            System.out.println("");
+            validate();
+        } else if (!password.equals("abc$123")){
             System.out.println("I don't know you!");
             System.out.println("Please try again!");
             System.out.println("");
