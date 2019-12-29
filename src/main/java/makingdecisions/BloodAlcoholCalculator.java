@@ -24,10 +24,14 @@ public class BloodAlcoholCalculator {
     public void calculateForMen() {
         double BAC = ((totalAlcoholConsumed * 5.14) / weight * rforMen) - (0.015 * numberOfHours);
         if (BAC >= 0.08) {
-            System.out.println("Your BAC is " + BAC);
+            System.out.format("Your BAC is %.2f", BAC);
+            System.out.print(".");
+            System.out.println("");
             System.out.println("It is not legal for you to drive");
         } else if (BAC <= 0.07) {
-            System.out.println("Your BAC is " + BAC);
+            System.out.format("Your BAC is %.2f", BAC);
+            System.out.print(".");
+            System.out.println("");
             System.out.println("It is legal for you to drive");
         }
     }
@@ -35,10 +39,14 @@ public class BloodAlcoholCalculator {
     public void calculateForWomen() {
         double BAC = ((totalAlcoholConsumed * 5.14) / weight * rForWomen) - (0.015 * numberOfHours);
         if (BAC >= 0.08) {
-            System.out.println("Your BAC is " + BAC);
+            System.out.format("Your BAC is %.2f", BAC);
+            System.out.print(".");
+            System.out.println("");
             System.out.println("It is not legal for you to drive");
         } else if (BAC <= 0.07) {
-            System.out.println("Your BAC is " + BAC);
+            System.out.format("Your BAC is %.2f", BAC);
+            System.out.print(".");
+            System.out.println("");
             System.out.println("It is legal for you to drive");
         }
     }
