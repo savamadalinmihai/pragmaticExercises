@@ -1,5 +1,6 @@
 package makingdecisions;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class BloodAlcoholCalculator {
@@ -52,9 +53,14 @@ public class BloodAlcoholCalculator {
     }
 
     public double getWeight() {
-        System.out.println("What is your weight?");
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextDouble();
+        try {
+            System.out.println("What is your weight?");
+            Scanner scanner = new Scanner(System.in);
+            return scanner.nextDouble();
+        } catch (InputMismatchException e) {
+            System.out.println("Please enter a number.");
+        }
+        return getWeight();
     }
 
     public String getGender() {
@@ -64,21 +70,36 @@ public class BloodAlcoholCalculator {
     }
 
     public int getNumberOfDrinks() {
-        System.out.println("How many drinks did you have?");
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextInt();
+        try {
+            System.out.println("How many drinks did you have?");
+            Scanner scanner = new Scanner(System.in);
+            return scanner.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Please enter a number.");
+        }
+        return getNumberOfDrinks();
     }
 
     public double getAlcoholByVolume() {
-        System.out.println("What was the percentage of alcohol per drink?");
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextDouble();
+        try {
+            System.out.println("What was the percentage of alcohol per drink?");
+            Scanner scanner = new Scanner(System.in);
+            return scanner.nextDouble();
+        } catch (InputMismatchException e) {
+            System.out.println("Please enter a number.");
+        }
+        return getAlcoholByVolume();
     }
 
     public int getNumberOfHours() {
-        System.out.println("How many hours have passed since your last drink?");
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextInt();
+        try {
+            System.out.println("How many hours have passed since your last drink?");
+            Scanner scanner = new Scanner(System.in);
+            return scanner.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Please enter a number!");
+        }
+        return getNumberOfHours();
     }
 
 
