@@ -8,8 +8,12 @@ public class NumbersToNames {
     public void validator() {
         if (number < 1 || number > 12) {
             System.out.println("Please enter a number between 1 and 12.");
+        }
+        if (number >= 1 && number <= 12) {
+            translate();
+        } else {
             validator();
-        } else translate();
+        }
     }
 
     public void translate() {
