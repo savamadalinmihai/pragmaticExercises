@@ -6,12 +6,16 @@ import java.util.Scanner;
 public class BMICalculator {
     String metricOrImperial = getMetricOrImperial();
 
-    public void decideMethod() {
-        if (!metricOrImperial.matches("MmIi")) {
-            System.out.println("Please enter one of the two options!");
+    public void checkerMethod() {
+        if (metricOrImperial.matches("[MmIi]")) {
             decideMethod();
-        } else
+        } else {
+            System.out.println("Please enter one of the two options.");
+            checkerMethod();
+        }
+    }
 
+    public void decideMethod() {
         if (metricOrImperial.equalsIgnoreCase("M")) {
             System.out.println("You chose the Metric system. For this, please use cm and kg");
             calculateMetric();
@@ -101,7 +105,7 @@ public class BMICalculator {
 
     public static void main(String[] args) {
         BMICalculator bmiCalculator = new BMICalculator();
-        bmiCalculator.decideMethod();
+        bmiCalculator.checkerMethod();
 
     }
 }
