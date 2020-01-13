@@ -1,5 +1,6 @@
 package makingdecisions;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MultiStateTaxCalculator {
@@ -34,7 +35,8 @@ public class MultiStateTaxCalculator {
             System.out.println("The tax is " + dollar + eauClaireTax);
             System.out.println("The total is " + dollar + eauClaireTotal);
             return;
-        } else if (county.equalsIgnoreCase("D") || county.equalsIgnoreCase("Dunn")) {
+        } else if (county.equalsIgnoreCase("D") || county.equalsIgnoreCase("Dunn")
+                || county.equalsIgnoreCase("Du")) {
             System.out.println("You chose Dunn county.");
             System.out.println("The subtotal is " + dollar + simpleTotal);
             System.out.println("The tax is " + dollar + dunnTax);
@@ -62,9 +64,14 @@ public class MultiStateTaxCalculator {
 
 
     public double getAmount() {
-        System.out.println("What is the order amount?");
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextDouble();
+        try {
+            System.out.println("What is the order amount?");
+            Scanner scanner = new Scanner(System.in);
+            return scanner.nextDouble();
+        } catch (InputMismatchException e) {
+            System.out.println("Only numeric input is allowed!");
+        }
+        return getAmount();
     }
 
     public String getState() {
