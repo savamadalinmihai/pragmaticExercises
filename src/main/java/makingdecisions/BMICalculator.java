@@ -4,25 +4,22 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class BMICalculator {
-    String metricOrImperial = getMetricOrImperial();
-
-    public void checkerMethod() {
-        if (metricOrImperial.matches("[MmIi]")) {
-            decideMethod();
-        } else {
-            System.out.println("Please enter one of the two options.");
-            checkerMethod();
-        }
-    }
 
     public void decideMethod() {
-        if (metricOrImperial.equalsIgnoreCase("M")) {
-            System.out.println("You chose the Metric system. For this, please use cm and kg");
-            calculateMetric();
-        } else if (metricOrImperial.equalsIgnoreCase("I")) {
-            System.out.println("You chose the Imperial system. For this, please specify your height in inches" +
-                    " and your weight in pounds");
-            calculateImperial();
+        while (true) {
+            String metricOrImperial = getMetricOrImperial();
+            if (metricOrImperial.equalsIgnoreCase("M")) {
+                System.out.println("You chose the Metric system. For this, please use cm and kg");
+                calculateMetric();
+                break;
+            } else if (metricOrImperial.equalsIgnoreCase("I")) {
+                System.out.println("You chose the Imperial system. " +
+                        "For this, please specify your height in inches and your weight in pounds");
+                calculateImperial();
+                break;
+            } else
+                System.out.println("You can only choose between metric and imperial!");
+                System.out.println("");
         }
     }
 
@@ -105,7 +102,7 @@ public class BMICalculator {
 
     public static void main(String[] args) {
         BMICalculator bmiCalculator = new BMICalculator();
-        bmiCalculator.checkerMethod();
-
+        bmiCalculator.decideMethod();
     }
 }
+
