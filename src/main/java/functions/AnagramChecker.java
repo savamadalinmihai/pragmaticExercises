@@ -20,10 +20,11 @@ public class AnagramChecker {
             Arrays.sort(ArrayS1);
             Arrays.sort(ArrayS2);
             status = Arrays.equals(ArrayS1, ArrayS2);
-        } if (status){
-            System.out.println("\"" + firstWord + "\"" + " and " + "\"" + secondWord + "\"" + " are anagrams.");
-        } else {
-            System.out.println("\"" + firstWord + "\"" + " and " + "\"" + secondWord + "\"" + " are not anagrams.");
+            if (status) {
+                System.out.println("\"" + firstWord + "\"" + " and " + "\"" + secondWord + "\"" + " are anagrams.");
+            } else {
+                System.out.println("\"" + firstWord + "\"" + " and " + "\"" + secondWord + "\"" + " are not anagrams.");
+            }
         }
     }
 
