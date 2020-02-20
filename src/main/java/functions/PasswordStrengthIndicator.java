@@ -30,7 +30,7 @@ public class PasswordStrengthIndicator {
 
     public int hasLessThanEightLetters() {
         int value;
-        if (password.matches("[a-z,A-Z]")) {
+        if (password.matches("(?=.*[a-z,A-Z]).*")) {
             value = 1;
             return value;
         }else {
@@ -41,7 +41,7 @@ public class PasswordStrengthIndicator {
 
     public int hasLessThanEightNumbers() {
         int value;
-        if (password.matches("[0-9]")) {
+        if (password.matches("(?=.*[0-9]).*")) {
             value = 1;
             return value;
         }else {
@@ -61,10 +61,9 @@ public class PasswordStrengthIndicator {
         }
     }
 
-
     public int hasSymbols() {
         int value;
-        if (password.contains("!#$%&'()*+,-./:;<=>?@[]^_`{|}~")) {
+        if (password.matches(".*([~!@#$%^&*()_-]).*")) {
             value = 1;
             return value;
         }else {
