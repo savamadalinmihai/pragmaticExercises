@@ -10,11 +10,12 @@ public class MonthsToPayOffACreditCard {
 
     public void calculateMonthsUntilPaidOff(){
         double dailyRate = (apr/365);
-        double numberOfMonths = (-(1/30)) * ((Math.log(1 + (balance/monthlyPayment *
+        double numberOfMonths = (-(1.0/30)) * ((Math.log(1 + (balance/monthlyPayment *
                 (1 - (Math.pow((1 + dailyRate), 30))))))/Math.log(1 + dailyRate));
+        int roundedMonths = (int) Math.ceil(numberOfMonths);
 
 
-        System.out.println("It will take you " + numberOfMonths + " months to pay off this card.");
+        System.out.println("It will take you " + roundedMonths + " months to pay off this card.");
     }
 
     public double balance() {
