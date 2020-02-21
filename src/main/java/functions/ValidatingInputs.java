@@ -53,7 +53,7 @@ public class ValidatingInputs {
     public void matchesPattern(){
         String employeeIdPattern = "AA-1234";
 
-        if (!employeeIdPattern.matches("[A-Z]{2}[-]\\d{4}")){
+        if (!employeeIdPattern.matches("([A-Z]{2})+[-](\\d{4})")){
             System.out.println(employeeId + " is not a valid ID!");
             errorCount++;
         }

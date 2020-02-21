@@ -9,7 +9,7 @@ public class AnagramChecker {
         System.out.println("Enter two strings and I'll tell you if they are anagrams:");
         String firstWord = getInput1().replaceAll("\\s", "");
         String secondWord = getInput2().replaceAll("\\s", "");
-        boolean status = true;
+        boolean status;
         if (firstWord.length() != secondWord.length()) {
             System.out.println("The two words you entered are of different length. Please type again.");
             status = false;
