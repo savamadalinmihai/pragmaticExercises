@@ -14,7 +14,6 @@ public class GuessTheNumberGame {
     public void playGame() {
         // this method checks user input and calls appropriate method
         int decision = decision();
-
         if (decision == 1) {
             lowDifficulty();
         } else if (decision == 2) {
@@ -34,6 +33,9 @@ public class GuessTheNumberGame {
         if (playAgain.equalsIgnoreCase("Y")
                 || playAgain.equalsIgnoreCase("Yes")) {
             guessesItTook = 0;
+            lowDifficultyNumber = random.nextInt(10) + 1;
+            mediumDifficultyNumber = random.nextInt(100) + 1;
+            hardDifficultyNumber = random.nextInt(1000) + 1;
             playGame();
         } else if ((playAgain.equalsIgnoreCase("N")
                 || playAgain.equalsIgnoreCase("No"))) {
