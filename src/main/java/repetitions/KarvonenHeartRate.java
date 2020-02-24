@@ -13,13 +13,10 @@ public class KarvonenHeartRate {
         System.out.println();
         System.out.println("Intensity: " + "\t| Rate:");
         for (int intensity = 55; intensity <= 95; intensity+=5) {
-            int targetHeartRate = (((220 - age) - restingPulse) * (intensity/100)) + restingPulse;
+            int targetHeartRate = (((220 - age) - restingPulse) * intensity/100) + restingPulse;
             System.out.println(intensity + "%" + "\t        | " + targetHeartRate + " \tbpm");
         }
     }
-
-
-
 
     public int getAge() {
         System.out.println("What is your age?");
