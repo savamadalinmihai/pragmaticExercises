@@ -7,9 +7,11 @@ public class PickingAWinner {
     List<String> participants = new ArrayList<>();
 
     public void checkForInput() {
+        String userInput = getInput();
+        participants.add(userInput);
         while (getInput() != null) {
-            String userInput = getInput();
-            participants.add(userInput);
+            participants.add(getInput());
+            userInput = getInput();
         }
         int randomNumber = random.nextInt(participants.size());
         System.out.println("The winner is " + participants.get(randomNumber));
