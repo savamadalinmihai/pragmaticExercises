@@ -4,28 +4,27 @@ import java.util.*;
 
 public class PickingAWinner {
     Random random = new Random();
+    String userInput = getInput();
     List<String> participants = new ArrayList<>();
 
-    public void checkForInput() {
-        String userInput = getInput();
-        participants.add(userInput);
-        while (getInput() != null) {
-            participants.add(getInput());
+    public void verifyInput() {
+        while (!userInput.isEmpty()) {
+            participants.add(userInput);
             userInput = getInput();
         }
         int randomNumber = random.nextInt(participants.size());
-        System.out.println("The winner is " + participants.get(randomNumber));
+        System.out.println("The winner is: " + participants.get(randomNumber) + ".");
     }
 
 
     public String getInput() {
         System.out.println("Enter a name:");
         Scanner scanner = new Scanner(System.in);
-        return scanner.next();
+        return scanner.nextLine();
     }
 
     public static void main(String[] args) {
         PickingAWinner pickingAWinner = new PickingAWinner();
-        pickingAWinner.checkForInput();
+        pickingAWinner.verifyInput();
     }
 }
