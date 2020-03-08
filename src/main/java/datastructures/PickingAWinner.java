@@ -13,7 +13,7 @@ public class PickingAWinner {
             userInput = getInput();
         }
         int randomNumber = random.nextInt(participants.size());
-        System.out.println("The winner is: " + participants.get(randomNumber) + ".");
+        System.out.println("The winner is....... " + participants.get(randomNumber) + ".");
     }
 
 
