@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class ComputingStatistics {
     private String userInput = getInput();
-    private List<Integer> values = new ArrayList<>();
+    private List<Integer> values = new ArrayList<Integer>();
 
 
     private void analiseAndProcessInput() {
@@ -44,6 +44,7 @@ public class ComputingStatistics {
         System.out.println("The minimum is: " + Collections.min(values) + ".");
         System.out.println("The maximum is: " + Collections.max(values) + ".");
         System.out.println("The standard deviation is: " + standardDeviation + ".");
+        return;
     }
 
     public void checkThatInputIsNumeric() {
