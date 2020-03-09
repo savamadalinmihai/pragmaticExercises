@@ -14,7 +14,7 @@ public class PasswordGenerator {
     StringBuilder stringOfAllLetters = new StringBuilder();
     StringBuilder stringOfAllCharacters = new StringBuilder();
     StringBuilder passwordThatHasToBeShuffled = new StringBuilder();
-    String shuffledPassword = String.valueOf(passwordThatHasToBeShuffled);
+    String shuffledPassword;
     String passwordForPrinting;
 
     public void generateNumbersInPassword() {
@@ -42,7 +42,7 @@ public class PasswordGenerator {
         }
     }
 
-    public void shufflePassword(){
+    public String shufflePassword(){
         List<Character> list = new ArrayList<Character>();
         char[] charArray = shuffledPassword.toCharArray();
         for (int i = 0; i < charArray.length; i++) {
@@ -55,7 +55,7 @@ public class PasswordGenerator {
             char letter = list.get(i);
             shuffler.append(letter);
         }
-        passwordForPrinting = shuffler.toString();
+        return passwordForPrinting = shuffler.toString();
     }
 
     public void generateCompletePassword() {
@@ -67,6 +67,8 @@ public class PasswordGenerator {
         passwordThatHasToBeShuffled.append(stringOfAllNumbers);
         passwordThatHasToBeShuffled.append(stringOfAllLetters);
         passwordThatHasToBeShuffled.append(stringOfAllCharacters);
+
+        shuffledPassword = String.valueOf(passwordThatHasToBeShuffled);
 
         shufflePassword();
 
