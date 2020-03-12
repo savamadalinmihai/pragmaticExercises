@@ -6,8 +6,7 @@ import java.util.Scanner;
 
 public class PasswordStrengthIndicator {
     String password = getPasswordFromUser();
-    int count = hasEightCharacters()+hasLessThanEightNumbers()+hasLessThanEightLetters()+hasSymbols();
-
+    int count = hasEightCharacters() + hasLessThanEightNumbers() + hasLessThanEightLetters() + hasSymbols();
 
     public void checkPassword() {
         switch (count) {

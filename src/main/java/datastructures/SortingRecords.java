@@ -60,8 +60,9 @@ public class SortingRecords {
     }
 
     public void sortRecords() {
-        rowsList.sort(Comparator.comparing(stringObjectMap -> rowsList.indexOf("last_name"),
-                Comparator.nullsLast(Comparator.naturalOrder())));
+        rowsList.sort(Comparator.comparing(rowsList -> rowsList.get("last_name").toString()));
+
+        System.out.println(Arrays.toString(rowsList.));
     }
 
     public static void main(String[] args) {
