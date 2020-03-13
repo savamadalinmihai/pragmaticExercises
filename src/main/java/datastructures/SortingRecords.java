@@ -60,7 +60,7 @@ public class SortingRecords {
         for (int i = 1; i <= rowsList.size(); i++) {
             System.out.println(rowsList.listIterator(i) + "\t");
         }
-        System.out.println(rowsList.listIterator().toString() + "\t");
+        System.out.println(rowsList.listIterator().toString()  + "\t");
     }
 
     public static void main(String[] args) {
