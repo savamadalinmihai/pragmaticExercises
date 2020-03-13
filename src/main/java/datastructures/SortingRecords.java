@@ -1,6 +1,5 @@
 package datastructures;
 
-import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -62,7 +61,7 @@ public class SortingRecords {
     public void sortRecords() {
         rowsList.sort(Comparator.comparing(rowsList -> rowsList.get("last_name").toString()));
 
-        System.out.println(Arrays.toString(rowsList.));
+        System.out.println(rowsList.toString());
     }
 
     public static void main(String[] args) {
