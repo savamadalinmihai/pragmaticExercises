@@ -54,13 +54,19 @@ public class SortingRecords {
     }
 
     public void sortRecords() {
+        initialiseDataSet();
         rowsList.sort(Comparator.comparing(rowsList -> rowsList.get("last_name").toString()));
 
-        System.out.println("Name " + "\t| Position" + "\t| Separation Date ");
-        for (int i = 1; i <= rowsList.size(); i++) {
-            System.out.println(rowsList.listIterator(i) + "\t");
+        System.out.println("Name                   " + "\t| Position               " + "\t| Separation Date ");
+        System.out.println("---------------------------------------------------------------------");
+        for (Map<String, Object> map : rowsList) {
+            Iterator<Map.Entry<String, Object>> iterator = map.entrySet().iterator();
+            while (iterator.hasNext()) {
+                Map.Entry<String, Object> currentMapEntry = iterator.next();
+                System.out.print(currentMapEntry.getValue() + "\t|");
+
+            }
         }
-        System.out.println(rowsList.listIterator().toString()  + "\t");
     }
 
     public static void main(String[] args) {
