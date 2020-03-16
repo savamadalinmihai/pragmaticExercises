@@ -3,7 +3,8 @@ package datastructures;
 import java.time.LocalDate;
 import java.util.*;
 
-public class SortingRecords {
+public class FilteringRecords {
+
     Map<String, Object> row1 = new LinkedHashMap<>();
     Map<String, Object> row2 = new LinkedHashMap<>();
     Map<String, Object> row3 = new LinkedHashMap<>();
@@ -11,6 +12,7 @@ public class SortingRecords {
     Map<String, Object> row5 = new LinkedHashMap<>();
     Map<String, Object> row6 = new LinkedHashMap<>();
     List<Map<String, Object>> rowsList = new ArrayList<>();
+    String input = getInput();
 
     public void initialiseDataSet() {
 
@@ -52,28 +54,38 @@ public class SortingRecords {
         rowsList.add(row6);
     }
 
-    public void sortRecords() {
+    public void filterRecords() {
         initialiseDataSet();
         rowsList.sort(Comparator.comparing(rowsList -> rowsList.get("last_name").toString()));
 
+        System.out.println("Results:");
         System.out.println("Name                 | Position             | Separation Date      |");
         System.out.println("-------------------------------------------------------------------");
         for (Map<String, Object> map : rowsList) {
             Iterator<Map.Entry<String, Object>> iterator = map.entrySet().iterator();
-            while (iterator.hasNext()) {
-                Map.Entry<String, Object> currentMapEntry = iterator.next();
-                if (currentMapEntry.getKey().equals("first_name")) {
-                    currentMapEntry.setValue(currentMapEntry.getValue().toString() + " " +
-                            iterator.next().getValue().toString());
+            if (iterator.next().toString().contains(input)) {
+                iterator = map.entrySet().iterator();
+                while (iterator.hasNext()) {
+                    Map.Entry<String, Object> currentMapEntry = iterator.next();
+                    if (currentMapEntry.getKey().equals("first_name")) {
+                        currentMapEntry.setValue(currentMapEntry.getValue().toString() + " " +
+                                iterator.next().getValue().toString());
+                    }
+                    System.out.format("%-21s| ", currentMapEntry.getValue());
                 }
-                System.out.format("%-21s| ", currentMapEntry.getValue());
             }
             System.out.println();
         }
     }
 
+    public String getInput() {
+        System.out.println("Enter a search string:");
+        Scanner scanner = new Scanner(System.in);
+        return scanner.next();
+    }
+
     public static void main(String[] args) {
-        SortingRecords sortingRecords = new SortingRecords();
-        sortingRecords.sortRecords();
+        FilteringRecords filteringRecords = new FilteringRecords();
+        filteringRecords.filterRecords();
     }
 }
