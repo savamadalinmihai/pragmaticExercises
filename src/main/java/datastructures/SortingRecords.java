@@ -4,12 +4,12 @@ import java.time.LocalDate;
 import java.util.*;
 
 public class SortingRecords {
-    Map<String, Object> row1 = new HashMap<>();
-    Map<String, Object> row2 = new HashMap<>();
-    Map<String, Object> row3 = new HashMap<>();
-    Map<String, Object> row4 = new HashMap<>();
-    Map<String, Object> row5 = new HashMap<>();
-    Map<String, Object> row6 = new HashMap<>();
+    Map<String, Object> row1 = new LinkedHashMap<>();
+    Map<String, Object> row2 = new LinkedHashMap<>();
+    Map<String, Object> row3 = new LinkedHashMap<>();
+    Map<String, Object> row4 = new LinkedHashMap<>();
+    Map<String, Object> row5 = new LinkedHashMap<>();
+    Map<String, Object> row6 = new LinkedHashMap<>();
     List<Map<String, Object>> rowsList = new ArrayList<>();
     StringBuilder completeName = new StringBuilder();
 
@@ -33,12 +33,12 @@ public class SortingRecords {
         row4.put("first_name", "Jake");
         row4.put("last_name", "Jacobson");
         row4.put("position", "Programmer");
-        row4.put("separation_date", null);
+        row4.put("separation_date","" );
 
         row5.put("first_name", "Jaquelin");
         row5.put("last_name", "Jackson");
         row5.put("position", "DBA");
-        row5.put("separation_date", null);
+        row5.put("separation_date","");
 
         row6.put("first_name", "Sally");
         row6.put("last_name", "Weber");
@@ -63,9 +63,10 @@ public class SortingRecords {
             Iterator<Map.Entry<String, Object>> iterator = map.entrySet().iterator();
             while (iterator.hasNext()) {
                 Map.Entry<String, Object> currentMapEntry = iterator.next();
-                System.out.print(currentMapEntry.getValue() + "\t|");
-
+//                System.out.printf(currentMapEntry.getValue() + "\t");
+                System.out.print(currentMapEntry.getValue() + "\t" + "     |     ");
             }
+            System.out.println();
         }
     }
 
