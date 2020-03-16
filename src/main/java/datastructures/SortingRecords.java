@@ -11,7 +11,6 @@ public class SortingRecords {
     Map<String, Object> row5 = new LinkedHashMap<>();
     Map<String, Object> row6 = new LinkedHashMap<>();
     List<Map<String, Object>> rowsList = new ArrayList<>();
-    StringBuilder completeName = new StringBuilder();
 
     public void initialiseDataSet() {
 
@@ -57,14 +56,17 @@ public class SortingRecords {
         initialiseDataSet();
         rowsList.sort(Comparator.comparing(rowsList -> rowsList.get("last_name").toString()));
 
-        System.out.println("Name                   " + "\t| Position               " + "\t| Separation Date ");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("Name                 | Position             | Separation Date      |");
+        System.out.println("-------------------------------------------------------------------");
         for (Map<String, Object> map : rowsList) {
             Iterator<Map.Entry<String, Object>> iterator = map.entrySet().iterator();
             while (iterator.hasNext()) {
                 Map.Entry<String, Object> currentMapEntry = iterator.next();
-//                System.out.printf(currentMapEntry.getValue() + "\t");
-                System.out.print(currentMapEntry.getValue() + "\t" + "     |     ");
+                if (currentMapEntry.getKey().equals("first_name")){
+                    currentMapEntry.setValue(currentMapEntry.getValue().toString() + " " +
+                            iterator.next().getValue().toString());
+                }
+                System.out.format("%-21s| ", currentMapEntry.getValue());
             }
             System.out.println();
         }
