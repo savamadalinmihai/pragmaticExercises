@@ -74,7 +74,10 @@ public class FilteringRecords {
                     System.out.format("%-21s| ", currentMapEntry.getValue());
                 }
             }
-            System.out.println();
+            if (rowsList.toString().contains(input)){
+//                    map.entrySet().contains(input))
+                System.out.println();
+            }
         }
     }
 
