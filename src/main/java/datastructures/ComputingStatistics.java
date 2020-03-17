@@ -19,7 +19,9 @@ public class ComputingStatistics {
         }
         checkIfDoneCommand();
         checkThatInputIsNumeric();
-        values.add(Integer.parseInt(userInput));
+        if (userInput.matches("[*0-9]")) {
+            values.add(Integer.parseInt(userInput));
+        }
         userInput = getInput();
         analiseAndProcessInput();
     }
