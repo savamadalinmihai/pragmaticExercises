@@ -17,14 +17,18 @@ public class ComputingStatistics {
             userInput = getInput();
             analiseAndProcessInput();
         }
-        checkIfDoneCommand();
         checkThatInputIsNumeric();
-        if (userInput.matches("[*0-9]")) {
+        if (userInput.equalsIgnoreCase("done")) {
+            System.out.println("Ok. Calculating values!");
+            calculateValues();
+
+        } else {
             values.add(Integer.parseInt(userInput));
+            userInput = getInput();
+            analiseAndProcessInput();
         }
-        userInput = getInput();
-        analiseAndProcessInput();
     }
+
     public void calculateValues() {
         // this method calculates the values for both the average and standard deviation
         int numberOfValues = values.size();
@@ -55,14 +59,6 @@ public class ComputingStatistics {
             System.out.println("A value can only have numbers.");
             userInput = getInput();
             analiseAndProcessInput();
-        }
-    }
-
-    public void checkIfDoneCommand() {
-        // this checks if there is a done command in the input strings
-        if (userInput.equals("done")) {
-            System.out.println("Ok. Calculating values!");
-            calculateValues();
         }
     }
 
