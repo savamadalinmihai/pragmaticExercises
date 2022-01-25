@@ -5,15 +5,15 @@ import java.util.Scanner;
 public class ComputingSimpleInterest {
     int principal = getPrincipal();
     double rateOfInterest = getRateOfInterest();
-    double rateForCalculations = rateOfInterest/100;
+    double rateForCalculations = rateOfInterest / 100;
     int years = getYears();
-    double ammountAfterInvestment = principal*(1 + (rateForCalculations*years));
-    int roundedAmmount = (int)ammountAfterInvestment;
+    double ammountAfterInvestment = principal * (1 + (rateForCalculations * years));
+    int roundedAmmount = (int) ammountAfterInvestment;
     char dollar = '$';
 
-    public void start(){
-        System.out.println("After " + years + " years at " +rateOfInterest + "%, the investment " +
-                "will be worth " + dollar + roundedAmmount +".");
+    public void start() {
+        System.out.println("After " + years + " years at " + rateOfInterest + "%, the investment " +
+                "will be worth " + dollar + roundedAmmount + ".");
     }
 
     public int getPrincipal() {
